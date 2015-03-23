@@ -10,13 +10,13 @@ PAM Check_user
 Installez les librairies PAM :
 
 ``` sh
-yum install -y pam-devel
+$ sudo yum install -y pam-devel
 ```
 
 Installez les utilitaires de compilation:
 
 ``` sh
-yum -y install binutils qt gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel
+$ sudo yum groupinstall -y 'Development Tools'
 ```
 
 ### Récupérez les sources
@@ -24,33 +24,33 @@ yum -y install binutils qt gcc make patch libgomp glibc-headers glibc-devel kern
 Installez Git:
 
 ``` sh
-yum -y install git
+$ sudo yum -y install git
 ```
 
-Clonez le dépôt
+Clonez ce dépôt
 
 ``` sh
-git clone https://github.com/humboldtux/check_user.git
+$ git clone https://github.com/humboldtux/check_user.git
 ```
 
 ### Compilation
 
 ``` sh
-cd check_user
-gcc -o check_user -lpam -lpam_misc -ldl check_user.c
+$ cd check_user
+$ gcc -o check_user -lpam -lpam_misc -ldl check_user.c
 ```
 
-Un binaire check_user a été créé dans le dossier courant. Vous pouvez vérifier qu'il supporte bien PAM:
+Un binaire *check_user* a été créé dans le dossier courant. Vous pouvez vérifier qu'il supporte bien PAM:
 ``` sh
-ldd check_user
+$ ldd check_user
 ```
 
 Vous pouvez ensuite copier le binaire dans un dossier de votre $PATH:
 ``` sh
-mv check_user /usr/local/sbin/
+$ sudo mv check_user /usr/local/sbin/
 ```
 
 Puis vérifier que le binaire est bien accessible:
 ``` sh
-which check_user
+$ command -v check_user
 ```
