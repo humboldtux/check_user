@@ -3,7 +3,7 @@ check_user
 
 PAM Check_user
 
-## Instruction d'installation sous Centos 6.X
+## Instruction d'installation sous Centos
 
 ###Pré-requis
 
