@@ -30,13 +30,13 @@ $ sudo yum -y install git
 Clonez ce dépôt
 
 ``` sh
-$ git clone https://github.com/humboldtux/check_user.git
+$ git clone https://github.com/humboldtux/check_user.git /tmp/check_user
 ```
 
 ### Compilation
 
 ``` sh
-$ cd check_user
+$ cd /tmp/check_user
 $ gcc -o check_user -lpam -lpam_misc -ldl check_user.c
 ```
 
@@ -53,4 +53,11 @@ $ sudo mv check_user /usr/local/sbin/
 Puis vérifier que le binaire est bien accessible:
 ``` sh
 $ command -v check_user
+```
+
+### Ménage
+
+``` sh
+$ cd
+$ rm -rf /tmp/check_user
 ```
