@@ -33,12 +33,15 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
+    /* Initialisation de la transaction PAM */
     retval = pam_start("check_user", user, &conv, &pamh);
 
     if (retval == PAM_SUCCESS)
+        /* Authentification de l'utilisateur */
         retval = pam_authenticate(pamh, 0);    /* is user really user? */
 
     if (retval == PAM_SUCCESS)
+        /* Vérification de la validité du compte */
         retval = pam_acct_mgmt(pamh, 0);       /* permitted access? */
 
     /* This is where we have been authorized or not. */
@@ -49,6 +52,7 @@ int main(int argc, char *argv[])
         fprintf(stdout, "Not Authenticated\n");
     }
 
+    /* Met fin à la transaction PAM */
     if (pam_end(pamh,retval) != PAM_SUCCESS) {     /* close Linux-PAM */
         pamh = NULL;
         fprintf(stderr, "check_user: failed to release authenticator\n");
