@@ -1,11 +1,11 @@
 check_user
 ==========
 
-PAM Check_user
+PAM Check_user, récupéré depuis le dossier `examples` des sources de PAM.
 
-## Instruction d'installation sous Centos
+## Instructions d'installation sous Centos
 
-###Pré-requis
+###Prérequis
 
 Installez les librairies PAM :
 
