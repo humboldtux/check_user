@@ -5,7 +5,7 @@ PAM Check_user, récupéré depuis le dossier `examples` des sources de PAM.
 
 ## Instructions d'installation sous Centos
 
-###Prérequis
+### Prérequis
 
 Installez les librairies PAM :
 
